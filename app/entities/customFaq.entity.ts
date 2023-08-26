@@ -11,8 +11,16 @@ export const customFaqSchema = new Schema({
         type: String,
         required: true,
     },
+    sellerId: {
+        type: String,
+        required: true
+    },
     faq: {
         type: [faqSchema],
+        required: true
+    },
+    createdAt: {
+        type: Date,
         required: true
     }
 });

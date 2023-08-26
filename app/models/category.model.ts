@@ -3,4 +3,4 @@ import { categorySchema } from "../entities/category.entity";
 
 type CategoryModel = Model<typeof categorySchema>;
 
-export const Category = (models.hasOwnProperty('categories') ? models.categories : model('Categories', categorySchema)) as CategoryModel;
+export const Categories = (models.hasOwnProperty('categories') ? models.categories : model('Categories', categorySchema)) as CategoryModel;

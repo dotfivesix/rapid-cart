@@ -14,5 +14,9 @@ export const faqSchema = new Schema({
     answer: {
         type: Number,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        required: true
     }
 });

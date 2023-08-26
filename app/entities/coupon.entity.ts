@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-export const categorySchema = new Schema({
+export const couponSchema = new Schema({
     id: {
         type: String,
         required: true,
@@ -11,12 +11,23 @@ export const categorySchema = new Schema({
         required: true,
         unique: true
     },
-    label: {
+    description: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+    },
+    discountPercentage: {
+        type: Number,
+        required: true
+    },
+    categories: {
+        type: [String],
+        required: true
     },
     createdAt: {
+        type: Date,
+        required: true
+    },
+    validity: {
         type: Date,
         required: true
     }

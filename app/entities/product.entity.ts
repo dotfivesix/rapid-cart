@@ -1,7 +1,5 @@
 import { Schema } from "mongoose";
 import { faqSchema } from "./faq.entity";
-import { reviewSchema } from "./review.entity";
-import { customFaqSchema } from "./customFaq.entity";
 
 export const productSchema = new Schema({
     id: {
@@ -17,9 +15,10 @@ export const productSchema = new Schema({
         type: String,
         required: false
     },
-    images: [{
-        type: Blob
-    }],
+    images: {
+        type: [Blob],
+        required: false
+    },
     title: {
         type: String,
         required: true
@@ -33,10 +32,6 @@ export const productSchema = new Schema({
         type: Number,
         required: true
     },
-    currency: {
-        type: String,
-        required: true
-    },
     stocks: {
         type: Number,
         required: true
@@ -45,16 +40,12 @@ export const productSchema = new Schema({
         type: String,
         required: true
     },
-    reviews: {
-        type: [reviewSchema],
-        required: true
-    },
     faqs: {
         type: [faqSchema],
         required: true
     },
-    customFaqs: {
-        type: [customFaqSchema],
+    createdAt: {
+        type: Date,
         required: true
     }
 });

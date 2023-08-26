@@ -1,20 +1,22 @@
 import { Schema } from "mongoose";
 
-export const categorySchema = new Schema({
+export const notificationSchema = new Schema({
     id: {
         type: String,
         required: true,
         unique: true
     },
-    name:{
+    title:{
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
-    label: {
+    description: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+    },
+    markedAsRead: {
+        type: Boolean,
+        required: true
     },
     createdAt: {
         type: Date,

@@ -1,5 +1,5 @@
 import { establishDbConnection } from "@/app/db/conn";
-import { Category } from "@/app/models/category.model";
+import { Categories } from "@/app/models/category.model";
 import { Generate } from "@/app/utils/generate";
 import { NextResponse } from "next/server";
 
@@ -7,7 +7,7 @@ establishDbConnection();
 
 export async function GET() {
     try {
-        const categories = await Category.find();
+        const categories = await Categories.find();
         return NextResponse.json(categories);
     } catch (error) {
         console.error(error)
@@ -18,7 +18,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
     const { name, label } = await request.json();
-    const newCategory = new Category({
+    const newCategory = new Categories({
         id: Generate.key(),
         name, label
     });
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
     try {
         const id = new URL(request.url).searchParams.get('id');
-        await Category.findOneAndDelete({ id });
+        await Categories.findOneAndDelete({ id });
         return new Response('DELETED', { status: 200 });
     } catch (error) {
         console.error(error)

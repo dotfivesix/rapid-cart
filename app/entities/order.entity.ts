@@ -1,10 +1,14 @@
 import { Schema } from "mongoose";
 
-export const reviewSchema = new Schema({
+export const orderSchema = new Schema({
     id: {
         type: String,
         required: true,
         unique: true
+    },
+    sellerId:{
+        type: String,
+        required: true
     },
     productId: {
         type: String,
@@ -14,16 +18,21 @@ export const reviewSchema = new Schema({
         type: String,
         required: true
     },
-    rating: {
+    quantity: {
         type: Number,
         required: true
     },
-    review: {
-        type: String,
-        required: true
+    deliveryCharges: {
+        type: Number,
+        required: false,
+        default: 0
     },
     createdAt: {
         type: Date,
         required: true
+    },
+    isDelivered: {
+        type: Boolean,
+        required: false
     }
 });
