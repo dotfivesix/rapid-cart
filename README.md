@@ -1,6 +1,6 @@
 ###### *(Under Development)*
 # RapidCart
-Welcome to RapidCart, your all-in-one online shopping platform designed to provide you with a seamless and exciting shopping experience. Just like Amazon, RapidCart offers a vast selection of products from various categories, ensuring that you find exactly what you're looking for.
+Welcome to RapidCart, your all-in-one online shopping platform designed to provide you with a seamless and exciting shopping experience. RapidCart offers a vast selection of products from various categories, ensuring that you find exactly what you're looking for.
 ## Usage
 - **Authentication** : Sign up with a first name, last name, username, email, and password. Log in with username/email and password (you don't need this if you have a token). You need either your email or username to get password reset.
 - **Products** : You can explore products and categories with various filters. A user can put max 25 products in cart at a time (since this is a demo project, payment integration is also fake). You can explore products and even add to cart but to buy a product, an account is necessary.
