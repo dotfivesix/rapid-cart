@@ -1,5 +1,5 @@
 import { establishDbConnection } from "@/app/db/conn";
-import { Category } from "@/app/models/category";
+import { Category } from "@/app/models/category.model";
 import { Generate } from "@/app/utils/generate";
 import { NextResponse } from "next/server";
 
