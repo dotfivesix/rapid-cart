@@ -1,6 +1,5 @@
-import { Model, model, models } from "mongoose";
+import { InferSchemaType, Model, model, models } from "mongoose";
 import { productSchema } from "../entities/product.entity";
 
-type ProductModel = Model<typeof productSchema>;
-
-export const Products = (models.hasOwnProperty('products') ? models.products : model('products', productSchema)) as ProductModel;
+type ProductModel = Model<InferSchemaType<typeof productSchema>>;
+export const Products: ProductModel = (models.hasOwnProperty('products') ? models.products : model('products', productSchema)) as ProductModel;
