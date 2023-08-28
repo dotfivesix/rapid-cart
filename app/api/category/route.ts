@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 
 establishDbConnection();
 
+// category
 export async function GET() {
     try {
         const categories = await Categories.find();
@@ -16,12 +17,10 @@ export async function GET() {
     
 }
 
+// category { name, label }
 export async function POST(request: Request) {
     const { name, label } = await request.json();
-    const newCategory = new Categories({
-        id: Generate.key(),
-        name, label
-    });
+    const newCategory = new Categories({ name, label });
     try {
         await newCategory.save();
         return new Response('OK',{ status: 200 });
@@ -31,6 +30,7 @@ export async function POST(request: Request) {
     }
 }
 
+// category?id=<id>
 export async function DELETE(request: Request) {
     try {
         const id = new URL(request.url).searchParams.get('id');

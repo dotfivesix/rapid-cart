@@ -16,7 +16,7 @@ export const productSchema = new Schema({
         required: false
     },
     images: {
-        type: [Blob],
+        type: [Buffer],
         required: false
     },
     title: {
